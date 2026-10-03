@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>월급해부학 · 오늘의 추천</title>
+<meta name="description" content="월급해부학 @wolgeup_haebu — 직장인·1인가구 소비를 해부하고, 오늘의 추천 상품을 모았어요.">
+<meta property="og:title" content="월급해부학 · 오늘의 추천">
+<meta property="og:description" content="직장인·1인가구 소비 해부 & 최저가 추천 모음">
+<meta name="theme-color" content="#0F1B3D">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<style>
+:root{
+  --navy:#0F1B3D; --navy2:#1C2B57; --coral:#FF6B5B; --coral-soft:#FFEDEA;
+  --bg:#F4F6FA; --card:#FFFFFF; --text:#191F28; --sub:#6B7684; --line:#E5E8EB;
+  --r:20px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%}
+body{font-family:"Pretendard Variable",Pretendard,-apple-system,BlinkMacSystemFont,system-ui,"Apple SD Gothic Neo","Noto Sans KR",sans-serif;
+  background:var(--bg);color:var(--text);line-height:1.5;-webkit-font-smoothing:antialiased;word-break:keep-all}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:480px;margin:0 auto;padding:0 16px 40px}
+
+/* header */
+.hero{background:linear-gradient(160deg,var(--navy) 0%,var(--navy2) 100%);color:#fff;
+  padding:28px 20px 22px;border-radius:0 0 28px 28px;margin:0 -16px}
+.brand{display:flex;align-items:center;gap:12px}
+.logo{width:48px;height:48px;border-radius:16px;background:var(--coral);display:grid;place-items:center;
+  font-weight:800;font-size:20px;color:#fff;box-shadow:0 6px 18px rgba(255,107,91,.35);flex:none}
+.brand h1{font-size:22px;font-weight:800;letter-spacing:-.02em}
+.brand .handle{font-size:13px;color:rgba(255,255,255,.6);font-weight:500}
+.intro{margin-top:14px;font-size:15px;color:rgba(255,255,255,.88);font-weight:500;letter-spacing:-.01em}
+.intro b{color:var(--coral);font-weight:700}
+
+/* disclosure: sticky so it is always visible */
+.disclosure{position:sticky;top:0;z-index:20;margin:12px -16px 0;padding:10px 16px;
+  background:rgba(255,237,234,.96);backdrop-filter:saturate(180%) blur(10px);-webkit-backdrop-filter:saturate(180%) blur(10px);
+  border-bottom:1px solid #FFD6D0;font-size:12.5px;line-height:1.45;color:#8A3B32;font-weight:500}
+.disclosure strong{color:#D9473A;font-weight:800}
+
+/* tabs */
+.tabs{position:sticky;top:var(--disc-h,52px);z-index:15;display:flex;gap:8px;overflow-x:auto;
+  padding:14px 0 12px;margin:0 -16px;padding-left:16px;padding-right:16px;background:var(--bg);scrollbar-width:none}
+.tabs::-webkit-scrollbar{display:none}
+.tab{flex:none;border:0;cursor:pointer;font:inherit;font-size:14px;font-weight:600;padding:9px 16px;border-radius:999px;
+  background:#fff;color:var(--sub);box-shadow:inset 0 0 0 1px var(--line);transition:all .15s}
+.tab[aria-selected="true"]{background:var(--navy);color:#fff;box-shadow:none}
+
+/* section */
+.sec-title{display:flex;align-items:center;gap:8px;margin:6px 2px 12px;font-size:18px;font-weight:800;letter-spacing:-.02em}
+.badge-new{background:var(--coral);color:#fff;font-size:11px;font-weight:800;padding:3px 7px;border-radius:6px;letter-spacing:.04em}
+
+.post{background:var(--card);border-radius:var(--r);padding:18px 16px 16px;margin-bottom:14px;
+  box-shadow:0 1px 2px rgba(0,0,0,.03),0 4px 16px rgba(15,27,61,.05)}
+.post-head{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:12px}
+.post-title{font-size:17px;font-weight:700;letter-spacing:-.02em}
+.post-meta{display:flex;align-items:center;gap:6px;margin-bottom:4px}
+.chip{font-size:11.5px;font-weight:700;padding:3px 8px;border-radius:6px;background:#EEF1F8;color:var(--navy2)}
+.chip.c-최저가{background:#FFF4E0;color:#B26A00}
+.chip.c-아이{background:#E7F7EE;color:#1A7F4B}
+.date{font-size:12px;color:var(--sub);font-weight:500}
+.latest{font-size:11px;font-weight:800;color:var(--coral)}
+
+.product{display:flex;gap:12px;align-items:center;padding:12px 0;border-top:1px solid var(--line)}
+.product:first-of-type{border-top:0;padding-top:4px}
+.tile{width:56px;height:56px;border-radius:16px;background:var(--bg);display:grid;place-items:center;font-size:28px;flex:none}
+.pinfo{flex:1;min-width:0}
+.pname{font-size:15px;font-weight:600;line-height:1.35;letter-spacing:-.01em}
+.price{margin-top:4px;display:flex;align-items:baseline;gap:6px;flex-wrap:wrap}
+.price b{font-size:18px;font-weight:800;letter-spacing:-.02em}
+.price span{font-size:11.5px;color:var(--sub);font-weight:500}
+.btn{display:flex;align-items:center;justify-content:center;gap:6px;width:100%;margin-top:10px;
+  min-height:50px;border-radius:14px;background:var(--coral);color:#fff;font-size:16px;font-weight:700;
+  letter-spacing:-.01em;transition:transform .08s,filter .15s}
+.btn:active{transform:scale(.98);filter:brightness(.95)}
+.product-wrap{border-top:1px solid var(--line);padding:14px 0 2px}
+.post-head + .product-wrap{border-top:0;padding-top:2px}
+.product-wrap .product{border:0;padding:0}
+
+.empty{text-align:center;color:var(--sub);font-size:14px;padding:40px 0}
+
+/* footer */
+footer{margin-top:28px;text-align:center}
+.follow-title{font-size:14px;font-weight:700;color:var(--sub);margin-bottom:12px}
+.follows{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.follow{display:flex;flex-direction:column;align-items:center;gap:6px;padding:14px 4px;border-radius:16px;background:#fff;
+  box-shadow:inset 0 0 0 1px var(--line);font-size:13px;font-weight:600}
+.follow svg{width:22px;height:22px}
+.note{margin-top:18px;font-size:12.5px;color:var(--sub);font-weight:500}
+.copy{margin-top:6px;font-size:11.5px;color:#9AA3AE}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="hero">
+    <div class="brand">
+      <div class="logo" aria-hidden="true">월</div>
+      <div>
+        <h1>월급해부학</h1>
+        <div class="handle">@wolgeup_haebu</div>
+      </div>
+    </div>
+    <p class="intro">직장인·1인가구 지출을 <b>해부</b>하고, 꼭 필요한 것만 골라드려요.</p>
+  </header>
+
+  <div class="disclosure" id="disclosure" role="note">
+    <strong>[광고]</strong> 이 페이지는 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.
+  </div>
+
+  <nav class="tabs" role="tablist" aria-label="카테고리">
+    <button class="tab" role="tab" aria-selected="true" data-cat="전체">전체</button>
+    <button class="tab" role="tab" aria-selected="false" data-cat="소비해부">💸 소비해부</button>
+    <button class="tab" role="tab" aria-selected="false" data-cat="최저가">🏷️ 최저가</button>
+    <button class="tab" role="tab" aria-selected="false" data-cat="아이 축구용품">⚽ 아이 축구용품</button>
+  </nav>
+
+  <main>
+    <h2 class="sec-title"><span class="badge-new">NEW</span> 오늘의 추천</h2>
+    <div id="list"><div class="empty">불러오는 중…</div></div>
+  </main>
+
+  <footer>
+    <div class="follow-title">팔로우하고 매일 해부 받아보기</div>
+    <div class="follows">
+      <a class="follow" href="https://www.instagram.com/wolgeup_haebu/" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#E1306C" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="#E1306C"/></svg>
+        Instagram</a>
+      <a class="follow" href="https://x.com/wolgeup_haebu" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="#000"><path d="M17.75 3h3.07l-6.7 7.66L22 21h-6.17l-4.83-6.32L5.47 21H2.4l7.17-8.2L2 3h6.33l4.37 5.77L17.75 3Zm-1.08 16.17h1.7L7.4 4.74H5.58l11.09 14.43Z"/></svg>
+        X</a>
+      <a class="follow" href="https://www.threads.com/@wolgeup_haebu" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round"><path d="M16.5 11.2c-.4-2.6-2.1-3.9-4.4-3.9-2.6 0-4.3 1.9-4.3 4.7"/><path d="M19 8.5C17.9 5 15.4 3 12 3 7 3 4 6.6 4 12s3 9 8 9c3.9 0 6.9-2.3 6.9-5.5 0-2.7-2.3-4.5-5.6-4.5-2.4 0-4 1.2-4 2.9 0 1.6 1.4 2.6 3.1 2.6 2.6 0 4.1-2 4.1-5.6"/></svg>
+        Threads</a>
+    </div>
+    <p class="note">쿠팡 가격은 수시로 바뀌어요 · 클릭 시점 가격을 확인하세요</p>
+    <p class="copy">© 월급해부학 @wolgeup_haebu</p>
+  </footer>
+</div>
+
+<script>
+// 상품 데이터는 products.json에서 관리합니다 (add_product.py로 추가).
+const DATA_URL = "products.json";
+let POSTS = [];
+let current = "전체";
+
+const won = n => Number(n).toLocaleString("ko-KR") + "원";
+const esc = s => String(s).replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const chipClass = c => c === "최저가" ? "c-최저가" : c === "아이 축구용품" ? "c-아이" : "";
+const fmtDate = d => { const [y,m,dd] = d.split("-"); return `${y}.${m}.${dd}`; };
+
+function render(){
+  const list = document.getElementById("list");
+  const posts = POSTS.filter(p => current === "전체" || p.category === current);
+  if (!posts.length){ list.innerHTML = '<div class="empty">이 카테고리는 곧 채워질 예정이에요 🙌</div>'; return; }
+  const newest = POSTS[0] && POSTS[0].id;
+  list.innerHTML = posts.map(p => `
+    <article class="post">
+      <div class="post-meta">
+        <span class="chip ${chipClass(p.category)}">${esc(p.category)}</span>
+        <span class="date">${fmtDate(p.date)}</span>
+        ${p.id === newest ? '<span class="latest">· 최신</span>' : ''}
+      </div>
+      <div class="post-head"><h3 class="post-title">${esc(p.title)}</h3></div>
+      ${p.products.map(x => `
+        <div class="product-wrap">
+          <div class="product">
+            <div class="tile" aria-hidden="true">${esc(x.emoji || "🛒")}</div>
+            <div class="pinfo">
+              <div class="pname">${esc(x.name)}</div>
+              <div class="price"><b>${won(x.price)}</b><span>작성일 기준 가격</span></div>
+            </div>
+          </div>
+          <a class="btn" href="${esc(x.url)}" target="_blank" rel="sponsored noopener">쿠팡에서 보기 →</a>
+        </div>`).join("")}
+    </article>`).join("");
+}
+
+document.querySelectorAll(".tab").forEach(t => t.addEventListener("click", () => {
+  current = t.dataset.cat;
+  document.querySelectorAll(".tab").forEach(b => b.setAttribute("aria-selected", b === t));
+  render();
+}));
+
+function setDiscH(){ document.documentElement.style.setProperty("--disc-h", document.getElementById("disclosure").offsetHeight + "px"); }
+window.addEventListener("resize", setDiscH); setDiscH();
+
+fetch(DATA_URL, {cache: "no-store"})
+  .then(r => r.json())
+  .then(d => { POSTS = (d.posts || []).slice().sort((a,b) => b.date.localeCompare(a.date)); render(); })
+  .catch(() => { document.getElementById("list").innerHTML = '<div class="empty">상품 목록을 불러오지 못했어요. 잠시 후 다시 시도해 주세요.</div>'; });
+</script>
+</body>
+</html>

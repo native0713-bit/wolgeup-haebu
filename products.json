@@ -1,0 +1,24 @@
+{
+  "posts": [
+    {
+      "id": "2026-10-03-coffee",
+      "date": "2026-10-03",
+      "title": "10/3 커피값 해부",
+      "category": "소비해부",
+      "products": [
+        {
+          "name": "라이크 콜드브루 더치커피 원액 1L",
+          "price": 16900,
+          "url": "https://link.coupang.com/a/hydS1eaCRg",
+          "emoji": "☕"
+        },
+        {
+          "name": "락앤락 메트로 머그 텀블러 600ml",
+          "price": 21270,
+          "url": "https://link.coupang.com/a/hydWrbVnlQ",
+          "emoji": "🥤"
+        }
+      ]
+    }
+  ]
+}
