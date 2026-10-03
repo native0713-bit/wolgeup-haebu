@@ -1,6 +1,26 @@
 {
   "posts": [
     {
+      "id": "2026-10-04-2",
+      "date": "2026-10-04",
+      "title": "10/4 라면 최저가 시리즈",
+      "category": "최저가",
+      "products": [
+        {
+          "name": "농심 라면 124g × 20개",
+          "price": 21700,
+          "url": "https://link.coupang.com/a/hyQ75XlJzo",
+          "emoji": "🍜"
+        },
+        {
+          "name": "오뚜기 진라면 매운맛 120g × 20개",
+          "price": 13300,
+          "url": "https://link.coupang.com/a/hyRaM0pGG4",
+          "emoji": "🌶️"
+        }
+      ]
+    },
+    {
       "id": "2026-10-03-coffee",
       "date": "2026-10-03",
       "title": "10/3 커피값 해부",
