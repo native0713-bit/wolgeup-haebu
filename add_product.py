@@ -12,7 +12,7 @@
 import argparse, json, re, sys
 from pathlib import Path
 
-CATS = ["소비해부", "최저가", "아이 축구용품"]
+CATS = ["소비해부", "최저가", "육아용품", "생활용품", "차량용품", "아이 축구용품"]
 PATH = Path(__file__).with_name("products.json")
 
 def main():

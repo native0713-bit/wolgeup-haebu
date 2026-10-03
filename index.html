@@ -41,7 +41,8 @@ a{color:inherit;text-decoration:none}
 
 /* tabs */
 .tabs{position:sticky;top:var(--disc-h,52px);z-index:15;display:flex;gap:8px;overflow-x:auto;
-  padding:14px 0 12px;margin:0 -16px;padding-left:16px;padding-right:16px;background:var(--bg);scrollbar-width:none}
+  padding:14px 0 12px;margin:0 -16px;padding-left:16px;padding-right:16px;background:var(--bg);scrollbar-width:none;-webkit-overflow-scrolling:touch;scroll-snap-type:x proximity;overscroll-behavior-x:contain}
+.tabs .tab{scroll-snap-align:start}
 .tabs::-webkit-scrollbar{display:none}
 .tab{flex:none;border:0;cursor:pointer;font:inherit;font-size:14px;font-weight:600;padding:9px 16px;border-radius:999px;
   background:#fff;color:var(--sub);box-shadow:inset 0 0 0 1px var(--line);transition:all .15s}
@@ -59,6 +60,9 @@ a{color:inherit;text-decoration:none}
 .chip{font-size:11.5px;font-weight:700;padding:3px 8px;border-radius:6px;background:#EEF1F8;color:var(--navy2)}
 .chip.c-최저가{background:#FFF4E0;color:#B26A00}
 .chip.c-아이{background:#E7F7EE;color:#1A7F4B}
+.chip.c-육아{background:#FCEBF5;color:#B0347A}
+.chip.c-생활{background:#EAF4FF;color:#1D5FA8}
+.chip.c-차량{background:#EFEFF3;color:#3E4352}
 .date{font-size:12px;color:var(--sub);font-weight:500}
 .latest{font-size:11px;font-weight:800;color:var(--coral)}
 
@@ -112,6 +116,9 @@ footer{margin-top:28px;text-align:center}
     <button class="tab" role="tab" aria-selected="true" data-cat="전체">전체</button>
     <button class="tab" role="tab" aria-selected="false" data-cat="소비해부">💸 소비해부</button>
     <button class="tab" role="tab" aria-selected="false" data-cat="최저가">🏷️ 최저가</button>
+    <button class="tab" role="tab" aria-selected="false" data-cat="육아용품">🍼 육아용품</button>
+    <button class="tab" role="tab" aria-selected="false" data-cat="생활용품">🧺 생활용품</button>
+    <button class="tab" role="tab" aria-selected="false" data-cat="차량용품">🚗 차량용품</button>
     <button class="tab" role="tab" aria-selected="false" data-cat="아이 축구용품">⚽ 아이 축구용품</button>
   </nav>
 
@@ -146,13 +153,14 @@ let current = "전체";
 
 const won = n => Number(n).toLocaleString("ko-KR") + "원";
 const esc = s => String(s).replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
-const chipClass = c => c === "최저가" ? "c-최저가" : c === "아이 축구용품" ? "c-아이" : "";
+const CHIP = {"최저가":"c-최저가","아이 축구용품":"c-아이","육아용품":"c-육아","생활용품":"c-생활","차량용품":"c-차량"};
+const chipClass = c => CHIP[c] || "";
 const fmtDate = d => { const [y,m,dd] = d.split("-"); return `${y}.${m}.${dd}`; };
 
 function render(){
   const list = document.getElementById("list");
   const posts = POSTS.filter(p => current === "전체" || p.category === current);
-  if (!posts.length){ list.innerHTML = '<div class="empty">이 카테고리는 곧 채워질 예정이에요 🙌</div>'; return; }
+  if (!posts.length){ list.innerHTML = '<div class="empty"><div style="font-size:36px;margin-bottom:8px">📦</div><b style="color:var(--text);font-size:16px">곧 추가돼요</b><br>이 카테고리 추천 상품을 준비하고 있어요 🙌</div>'; return; }
   const newest = POSTS[0] && POSTS[0].id;
   list.innerHTML = posts.map(p => `
     <article class="post">
@@ -179,6 +187,7 @@ function render(){
 document.querySelectorAll(".tab").forEach(t => t.addEventListener("click", () => {
   current = t.dataset.cat;
   document.querySelectorAll(".tab").forEach(b => b.setAttribute("aria-selected", b === t));
+  t.scrollIntoView({behavior:"smooth",inline:"center",block:"nearest"});
   render();
 }));
 

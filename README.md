@@ -8,4 +8,4 @@ python3 add_product.py --date 2026-10-04 --title "10/4 배달비 해부" --categ
   --name "상품명" --price 12900 --url https://link.coupang.com/a/XXXX --emoji 🍱
 git add products.json && git commit -m "add product" && git push
 ```
-카테고리: 소비해부 / 최저가 / 아이 축구용품
+카테고리: 소비해부 / 최저가 / 육아용품 / 생활용품 / 차량용품 / 아이 축구용품
