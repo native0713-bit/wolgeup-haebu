@@ -1,6 +1,26 @@
 {
   "posts": [
     {
+      "id": "2026-10-05-3",
+      "date": "2026-10-05",
+      "title": "10/5 집콕 트램펄린",
+      "category": "육아용품",
+      "products": [
+        {
+          "name": "마이리틀타이거 에너지 트램펄린 (손잡이형, 베이지)",
+          "price": 99000,
+          "url": "https://link.coupang.com/a/hAwdU2BbNc",
+          "emoji": "🦘"
+        },
+        {
+          "name": "로베라 팔각 유아 트램폴린 + 바닥충격 방지쿠션",
+          "price": 158000,
+          "url": "https://link.coupang.com/a/hAwf0QopCm",
+          "emoji": "🛝"
+        }
+      ]
+    },
+    {
       "id": "2026-10-04-2",
       "date": "2026-10-04",
       "title": "10/4 라면 최저가 시리즈",
