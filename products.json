@@ -1,6 +1,26 @@
 {
   "posts": [
     {
+      "id": "2026-10-07-4",
+      "date": "2026-10-07",
+      "title": "10/7 환절기 이불·옷 정리",
+      "category": "생활용품",
+      "products": [
+        {
+          "name": "코멧 이불 압축팩 8개입+전용펌프 (중형 70×100cm)",
+          "price": 9990,
+          "url": "https://link.coupang.com/a/hDPPKTRavY",
+          "emoji": "🧺"
+        },
+        {
+          "name": "코멧 홈 패브릭 이불 케이스 93L 그레이 4개",
+          "price": 13300,
+          "url": "https://link.coupang.com/a/hDPQXCCmqW",
+          "emoji": "🛏️"
+        }
+      ]
+    },
+    {
       "id": "2026-10-05-3",
       "date": "2026-10-05",
       "title": "10/5 집콕 트램펄린",
