@@ -1,6 +1,26 @@
 {
   "posts": [
     {
+      "id": "2026-10-08-5",
+      "date": "2026-10-08",
+      "title": "10/8 가을 나들이 차 정리",
+      "category": "차량용품",
+      "products": [
+        {
+          "name": "레토 가죽 트렁크 정리함, 블랙&블랙",
+          "price": 18800,
+          "url": "https://link.coupang.com/a/hFu45h6rQq",
+          "emoji": "🚗"
+        },
+        {
+          "name": "아이빌 퀄팅 킥매트 자동차 시트커버, 코튼베이지",
+          "price": 14840,
+          "url": "https://link.coupang.com/a/hFu5ONb97A",
+          "emoji": "🧸"
+        }
+      ]
+    },
+    {
       "id": "2026-10-07-4",
       "date": "2026-10-07",
       "title": "10/7 환절기 이불·옷 정리",
