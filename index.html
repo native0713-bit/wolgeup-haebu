@@ -3,114 +3,149 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>월급해부학 · 오늘의 추천</title>
-<meta name="description" content="월급해부학 @wolgeup_haebu — 직장인·1인가구 소비를 해부하고, 오늘의 추천 상품을 모았어요.">
-<meta property="og:title" content="월급해부학 · 오늘의 추천">
-<meta property="og:description" content="직장인·1인가구 소비 해부 & 최저가 추천 모음">
+<title>월급해부학 · 영상 속 제품 모음</title>
+<meta name="description" content="월급해부학 @wolgeup_haebu — 영상 속 제품을 번호로 찾아보세요.">
+<meta property="og:title" content="월급해부학 · 영상 속 제품 모음">
+<meta property="og:description" content="번호나 상품명으로 영상 속 제품을 찾아보세요">
 <meta name="theme-color" content="#0F1B3D">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
 <style>
+/* ===== Brand tokens (see BRAND.md) ===== */
 :root{
-  --navy:#0F1B3D; --navy2:#1C2B57; --coral:#FF6B5B; --coral-soft:#FFEDEA;
-  --bg:#F4F6FA; --card:#FFFFFF; --text:#191F28; --sub:#6B7684; --line:#E5E8EB;
-  --r:20px;
+  --navy:#0F1B3D; --navy-2:#1C2B57; --navy-tint:#EEF1F8;
+  --coral:#FF6B5B; --coral-deep:#E8503F; --coral-soft:#FFEDEA;
+  --bg:#F4F6FA; --surface:#FFFFFF; --text:#191F28; --sub:#6B7684; --muted:#9AA3AE; --line:#E5E8EB;
+  --r-pill:999px; --r-card:20px; --r-tile:14px;
+  --pill-h:68px; --thumb:44px;
+  --shadow:0 1px 2px rgba(15,27,61,.04),0 6px 20px rgba(15,27,61,.06);
+  --marquee-h:34px;
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{-webkit-text-size-adjust:100%}
 body{font-family:"Pretendard Variable",Pretendard,-apple-system,BlinkMacSystemFont,system-ui,"Apple SD Gothic Neo","Noto Sans KR",sans-serif;
-  background:var(--bg);color:var(--text);line-height:1.5;-webkit-font-smoothing:antialiased;word-break:keep-all}
+  background:var(--bg);color:var(--text);line-height:1.5;-webkit-font-smoothing:antialiased;word-break:keep-all;letter-spacing:-.01em}
 a{color:inherit;text-decoration:none}
-.wrap{max-width:480px;margin:0 auto;padding:0 16px 40px}
+button,input{font:inherit;color:inherit}
+.num{font-variant-numeric:tabular-nums}
 
-/* header */
-.hero{background:linear-gradient(160deg,var(--navy) 0%,var(--navy2) 100%);color:#fff;
-  padding:28px 20px 22px;border-radius:0 0 28px 28px;margin:0 -16px}
-.brand{display:flex;align-items:center;gap:12px}
-.logo{width:48px;height:48px;border-radius:16px;background:var(--coral);display:grid;place-items:center;
-  font-weight:800;font-size:20px;color:#fff;box-shadow:0 6px 18px rgba(255,107,91,.35);flex:none}
-.brand h1{font-size:22px;font-weight:800;letter-spacing:-.02em}
-.brand .handle{font-size:13px;color:rgba(255,255,255,.6);font-weight:500}
-.intro{margin-top:14px;font-size:15px;color:rgba(255,255,255,.88);font-weight:500;letter-spacing:-.01em}
-.intro b{color:var(--coral);font-weight:700}
+/* ===== Marquee disclosure (pinned) ===== */
+.marquee{position:sticky;top:0;z-index:30;height:var(--marquee-h);overflow:hidden;background:var(--navy);color:#fff;
+  display:flex;align-items:center;font-size:12.5px;font-weight:600}
+.marquee-track{display:flex;flex:none;white-space:nowrap;animation:mq 22s linear infinite}
+.marquee-track span{padding:0 18px;display:inline-flex;align-items:center;gap:18px}
+.marquee-track span::after{content:"";width:4px;height:4px;border-radius:50%;background:var(--coral)}
+@keyframes mq{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@media (prefers-reduced-motion:reduce){.marquee-track{animation:none}}
 
-/* disclosure: sticky so it is always visible */
-.disclosure{position:sticky;top:0;z-index:20;margin:12px -16px 0;padding:10px 16px;
-  background:rgba(255,237,234,.96);backdrop-filter:saturate(180%) blur(10px);-webkit-backdrop-filter:saturate(180%) blur(10px);
-  border-bottom:1px solid #FFD6D0;font-size:12.5px;line-height:1.45;color:#8A3B32;font-weight:500}
-.disclosure strong{color:#D9473A;font-weight:800}
+.wrap{max-width:480px;margin:0 auto;padding:0 20px 48px}
 
-/* tabs */
-.tabs{position:sticky;top:var(--disc-h,52px);z-index:15;display:flex;gap:8px;overflow-x:auto;
-  padding:14px 0 12px;margin:0 -16px;padding-left:16px;padding-right:16px;background:var(--bg);scrollbar-width:none;-webkit-overflow-scrolling:touch;scroll-snap-type:x proximity;overscroll-behavior-x:contain}
-.tabs .tab{scroll-snap-align:start}
+/* ===== Header ===== */
+.profile{text-align:center;padding:32px 0 8px}
+.logo{width:72px;height:72px;margin:0 auto;border-radius:50%;background:var(--navy);color:#fff;display:grid;place-items:center;
+  font-size:28px;font-weight:800;box-shadow:0 0 0 4px var(--surface),0 0 0 6px var(--coral)}
+.profile h1{margin-top:16px;font-size:24px;font-weight:800;letter-spacing:-.03em}
+.handle{margin-top:2px;font-size:13px;color:var(--sub);font-weight:500}
+.intro{margin-top:10px;font-size:14.5px;color:var(--text);font-weight:500}
+.intro b{color:var(--coral-deep);font-weight:700}
+.ad-note{margin-top:12px;font-size:11.5px;color:var(--muted);font-weight:500;line-height:1.45}
+
+/* ===== Search ===== */
+.search{position:relative;margin:24px 0 0}
+.search input{width:100%;height:52px;border:0;border-radius:var(--r-pill);background:var(--surface);padding:0 48px 0 50px;
+  font-size:15px;font-weight:500;box-shadow:var(--shadow),inset 0 0 0 1px var(--line);outline:none;transition:box-shadow .15s}
+.search input::placeholder{color:var(--muted)}
+.search input:focus{box-shadow:var(--shadow),inset 0 0 0 2px var(--navy)}
+.search svg{position:absolute;left:18px;top:50%;transform:translateY(-50%);width:20px;height:20px;color:var(--sub)}
+.search .clear{position:absolute;right:10px;top:50%;transform:translateY(-50%);width:32px;height:32px;border:0;border-radius:50%;
+  background:var(--navy-tint);color:var(--sub);font-size:14px;cursor:pointer;display:none}
+.search.has .clear{display:block}
+
+/* ===== Section title ===== */
+.sec{margin-top:36px}
+.sec-title{text-align:center;font-size:17px;font-weight:800;letter-spacing:-.02em;margin-bottom:16px}
+.sec-sub{text-align:center;font-size:12.5px;color:var(--sub);margin:-10px 0 16px;font-weight:500}
+
+/* ===== Pill buttons ===== */
+.pills{display:flex;flex-direction:column;gap:12px}
+.pill{display:flex;align-items:center;gap:14px;height:var(--pill-h);padding:0 22px 0 12px;border-radius:var(--r-pill);
+  background:var(--surface);box-shadow:var(--shadow);transition:transform .08s,box-shadow .15s}
+.pill:active{transform:scale(.98)}
+.thumb{width:var(--thumb);height:var(--thumb);flex:none;border-radius:50%;background:var(--navy-tint);display:grid;place-items:center;
+  font-size:22px;line-height:1}
+.pill-label{flex:1;min-width:0;font-size:15px;font-weight:600;line-height:1.35;
+  display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.pill-label .no{color:var(--coral-deep);font-weight:800;margin-right:4px}
+.pill .go{flex:none;color:var(--muted);font-size:18px;font-weight:600}
+
+.divider{height:1px;background:var(--line);margin:40px 0 0}
+
+/* ===== Tabs ===== */
+.tabs{position:sticky;top:var(--marquee-h);z-index:15;display:flex;gap:8px;overflow-x:auto;margin:0 -20px;padding:14px 20px 12px;
+  background:var(--bg);scrollbar-width:none;-webkit-overflow-scrolling:touch;scroll-snap-type:x proximity;overscroll-behavior-x:contain}
 .tabs::-webkit-scrollbar{display:none}
-.tab{flex:none;border:0;cursor:pointer;font:inherit;font-size:14px;font-weight:600;padding:9px 16px;border-radius:999px;
-  background:#fff;color:var(--sub);box-shadow:inset 0 0 0 1px var(--line);transition:all .15s}
+.tab{flex:none;scroll-snap-align:start;border:0;cursor:pointer;font-size:14px;font-weight:600;height:38px;padding:0 16px;
+  border-radius:var(--r-pill);background:var(--surface);color:var(--sub);box-shadow:inset 0 0 0 1px var(--line);transition:all .15s}
 .tab[aria-selected="true"]{background:var(--navy);color:#fff;box-shadow:none}
 
-/* section */
-.sec-title{display:flex;align-items:center;gap:8px;margin:6px 2px 12px;font-size:18px;font-weight:800;letter-spacing:-.02em}
-.badge-new{background:var(--coral);color:#fff;font-size:11px;font-weight:800;padding:3px 7px;border-radius:6px;letter-spacing:.04em}
-
-.post{background:var(--card);border-radius:var(--r);padding:18px 16px 16px;margin-bottom:14px;
-  box-shadow:0 1px 2px rgba(0,0,0,.03),0 4px 16px rgba(15,27,61,.05)}
-.post-head{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:12px}
-.post-title{font-size:17px;font-weight:700;letter-spacing:-.02em}
-.post-meta{display:flex;align-items:center;gap:6px;margin-bottom:4px}
-.chip{font-size:11.5px;font-weight:700;padding:3px 8px;border-radius:6px;background:#EEF1F8;color:var(--navy2)}
-.chip.c-최저가{background:#FFF4E0;color:#B26A00}
-.chip.c-아이{background:#E7F7EE;color:#1A7F4B}
-.chip.c-육아{background:#FCEBF5;color:#B0347A}
-.chip.c-생활{background:#EAF4FF;color:#1D5FA8}
-.chip.c-차량{background:#EFEFF3;color:#3E4352}
+/* ===== Post cards ===== */
+.post{background:var(--surface);border-radius:var(--r-card);padding:20px 18px 18px;margin-top:14px;box-shadow:var(--shadow)}
+.post-meta{display:flex;align-items:center;gap:6px;flex-wrap:wrap}
+.chip{font-size:11.5px;font-weight:700;height:22px;padding:0 8px;border-radius:6px;display:inline-flex;align-items:center;background:var(--navy-tint);color:var(--navy-2)}
+.chip.no{background:var(--coral-soft);color:var(--coral-deep)}
 .date{font-size:12px;color:var(--sub);font-weight:500}
-.latest{font-size:11px;font-weight:800;color:var(--coral)}
-
-.product{display:flex;gap:12px;align-items:center;padding:12px 0;border-top:1px solid var(--line)}
-.product:first-of-type{border-top:0;padding-top:4px}
-.tile{width:56px;height:56px;border-radius:16px;background:var(--bg);display:grid;place-items:center;font-size:28px;flex:none}
-.pinfo{flex:1;min-width:0}
-.pname{font-size:15px;font-weight:600;line-height:1.35;letter-spacing:-.01em}
-.price{margin-top:4px;display:flex;align-items:baseline;gap:6px;flex-wrap:wrap}
-.price b{font-size:18px;font-weight:800;letter-spacing:-.02em}
+.post-title{margin-top:8px;font-size:17px;font-weight:700;letter-spacing:-.02em}
+.product{padding-top:16px;margin-top:16px;border-top:1px solid var(--line)}
+.prow{display:flex;gap:12px;align-items:center}
+.pname{font-size:15px;font-weight:600;line-height:1.4}
+.pname .no{color:var(--coral-deep);font-weight:800;margin-right:4px}
+.price{margin-top:3px;display:flex;align-items:baseline;gap:6px;flex-wrap:wrap}
+.price b{font-size:17px;font-weight:800}
 .price span{font-size:11.5px;color:var(--sub);font-weight:500}
-.btn{display:flex;align-items:center;justify-content:center;gap:6px;width:100%;margin-top:10px;
-  min-height:50px;border-radius:14px;background:var(--coral);color:#fff;font-size:16px;font-weight:700;
-  letter-spacing:-.01em;transition:transform .08s,filter .15s}
-.btn:active{transform:scale(.98);filter:brightness(.95)}
-.product-wrap{border-top:1px solid var(--line);padding:14px 0 2px}
-.post-head + .product-wrap{border-top:0;padding-top:2px}
-.product-wrap .product{border:0;padding:0}
+.btn{display:flex;align-items:center;justify-content:center;width:100%;margin-top:12px;height:50px;border-radius:var(--r-tile);
+  background:var(--coral);color:#fff;font-size:15.5px;font-weight:700;transition:transform .08s,background .15s}
+.btn:active{transform:scale(.98);background:var(--coral-deep)}
 
-.empty{text-align:center;color:var(--sub);font-size:14px;padding:40px 0}
+.empty{text-align:center;color:var(--sub);font-size:14px;padding:36px 0 20px}
+.empty .ic{font-size:32px;margin-bottom:6px}
+.empty b{display:block;color:var(--text);font-size:16px;margin-bottom:2px}
 
-/* footer */
-footer{margin-top:28px;text-align:center}
-.follow-title{font-size:14px;font-weight:700;color:var(--sub);margin-bottom:12px}
+/* ===== Footer ===== */
+footer{margin-top:44px;text-align:center}
+.follow-title{font-size:13.5px;font-weight:700;color:var(--sub);margin-bottom:12px}
 .follows{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
-.follow{display:flex;flex-direction:column;align-items:center;gap:6px;padding:14px 4px;border-radius:16px;background:#fff;
+.follow{display:flex;flex-direction:column;align-items:center;gap:6px;padding:14px 4px;border-radius:16px;background:var(--surface);
   box-shadow:inset 0 0 0 1px var(--line);font-size:13px;font-weight:600}
 .follow svg{width:22px;height:22px}
-.note{margin-top:18px;font-size:12.5px;color:var(--sub);font-weight:500}
-.copy{margin-top:6px;font-size:11.5px;color:#9AA3AE}
+.note{margin-top:20px;font-size:12.5px;color:var(--sub);font-weight:500}
+.copy{margin-top:6px;font-size:11.5px;color:var(--muted)}
 </style>
 </head>
 <body>
+<div class="marquee" role="note" aria-label="이 게시물은 쿠팡 파트너스 활동의 일환으로 일정액의 수수료를 제공받습니다">
+  <div class="marquee-track" aria-hidden="true" id="mq"></div>
+</div>
+
 <div class="wrap">
-  <header class="hero">
-    <div class="brand">
-      <div class="logo" aria-hidden="true">월</div>
-      <div>
-        <h1>월급해부학</h1>
-        <div class="handle">@wolgeup_haebu</div>
-      </div>
-    </div>
+  <header class="profile">
+    <div class="logo" aria-hidden="true">월</div>
+    <h1>월급해부학</h1>
+    <div class="handle">@wolgeup_haebu</div>
     <p class="intro">직장인·1인가구 지출을 <b>해부</b>하고, 꼭 필요한 것만 골라드려요.</p>
+    <p class="ad-note">[광고] 이 페이지는 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.</p>
   </header>
 
-  <div class="disclosure" id="disclosure" role="note">
-    <strong>[광고]</strong> 이 페이지는 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.
+  <div class="search" id="searchBox">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+    <input id="q" type="search" inputmode="search" placeholder="번호나 상품명으로 검색" aria-label="번호나 상품명으로 검색" autocomplete="off">
+    <button class="clear" id="clear" aria-label="검색어 지우기">✕</button>
   </div>
+
+  <section class="sec" aria-labelledby="recentTitle">
+    <h2 class="sec-title" id="recentTitle">🥇최근 영상 속 제품</h2>
+    <div class="pills" id="pills"></div>
+  </section>
+
+  <div class="divider"></div>
 
   <nav class="tabs" role="tablist" aria-label="카테고리">
     <button class="tab" role="tab" aria-selected="true" data-cat="전체">전체</button>
@@ -121,24 +156,17 @@ footer{margin-top:28px;text-align:center}
     <button class="tab" role="tab" aria-selected="false" data-cat="차량용품">🚗 차량용품</button>
     <button class="tab" role="tab" aria-selected="false" data-cat="아이 축구용품">⚽ 아이 축구용품</button>
   </nav>
-
-  <main>
-    <h2 class="sec-title"><span class="badge-new">NEW</span> 오늘의 추천</h2>
-    <div id="list"><div class="empty">불러오는 중…</div></div>
-  </main>
+  <main id="list"></main>
 
   <footer>
     <div class="follow-title">팔로우하고 매일 해부 받아보기</div>
     <div class="follows">
       <a class="follow" href="https://www.instagram.com/wolgeup_haebu/" target="_blank" rel="noopener">
-        <svg viewBox="0 0 24 24" fill="none" stroke="#E1306C" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="#E1306C"/></svg>
-        Instagram</a>
+        <svg viewBox="0 0 24 24" fill="none" stroke="#E1306C" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="#E1306C"/></svg>Instagram</a>
       <a class="follow" href="https://x.com/wolgeup_haebu" target="_blank" rel="noopener">
-        <svg viewBox="0 0 24 24" fill="#000"><path d="M17.75 3h3.07l-6.7 7.66L22 21h-6.17l-4.83-6.32L5.47 21H2.4l7.17-8.2L2 3h6.33l4.37 5.77L17.75 3Zm-1.08 16.17h1.7L7.4 4.74H5.58l11.09 14.43Z"/></svg>
-        X</a>
+        <svg viewBox="0 0 24 24" fill="#000"><path d="M17.75 3h3.07l-6.7 7.66L22 21h-6.17l-4.83-6.32L5.47 21H2.4l7.17-8.2L2 3h6.33l4.37 5.77L17.75 3Zm-1.08 16.17h1.7L7.4 4.74H5.58l11.09 14.43Z"/></svg>X</a>
       <a class="follow" href="https://www.threads.com/@wolgeup_haebu" target="_blank" rel="noopener">
-        <svg viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round"><path d="M16.5 11.2c-.4-2.6-2.1-3.9-4.4-3.9-2.6 0-4.3 1.9-4.3 4.7"/><path d="M19 8.5C17.9 5 15.4 3 12 3 7 3 4 6.6 4 12s3 9 8 9c3.9 0 6.9-2.3 6.9-5.5 0-2.7-2.3-4.5-5.6-4.5-2.4 0-4 1.2-4 2.9 0 1.6 1.4 2.6 3.1 2.6 2.6 0 4.1-2 4.1-5.6"/></svg>
-        Threads</a>
+        <svg viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round"><path d="M16.5 11.2c-.4-2.6-2.1-3.9-4.4-3.9-2.6 0-4.3 1.9-4.3 4.7"/><path d="M19 8.5C17.9 5 15.4 3 12 3 7 3 4 6.6 4 12s3 9 8 9c3.9 0 6.9-2.3 6.9-5.5 0-2.7-2.3-4.5-5.6-4.5-2.4 0-4 1.2-4 2.9 0 1.6 1.4 2.6 3.1 2.6 2.6 0 4.1-2 4.1-5.6"/></svg>Threads</a>
     </div>
     <p class="note">쿠팡 가격은 수시로 바뀌어요 · 클릭 시점 가격을 확인하세요</p>
     <p class="copy">© 월급해부학 @wolgeup_haebu</p>
@@ -146,58 +174,108 @@ footer{margin-top:28px;text-align:center}
 </div>
 
 <script>
-// 상품 데이터는 products.json에서 관리합니다 (add_product.py로 추가).
+// 상품 데이터: products.json (add_product.py로 추가). 각 상품은 3자리 번호(num)를 가집니다.
 const DATA_URL = "products.json";
-let POSTS = [];
-let current = "전체";
+const DISCLOSURE = "이 게시물은 쿠팡 파트너스 활동의 일환으로 일정액의 수수료를 제공받습니다";
+const CIRCLED = "①②③④⑤⑥⑦⑧⑨⑩";
+let POSTS = [], ITEMS = [], cat = "전체", query = "";
+
+document.getElementById("mq").innerHTML = ("<span>" + DISCLOSURE + "</span>").repeat(8);
 
 const won = n => Number(n).toLocaleString("ko-KR") + "원";
 const esc = s => String(s).replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
-const CHIP = {"최저가":"c-최저가","아이 축구용품":"c-아이","육아용품":"c-육아","생활용품":"c-생활","차량용품":"c-차량"};
-const chipClass = c => CHIP[c] || "";
-const fmtDate = d => { const [y,m,dd] = d.split("-"); return `${y}.${m}.${dd}`; };
+const fmtDate = d => d.replace(/-/g, ".");
+const norm = s => String(s).toLowerCase().replace(/\s+/g, "");
 
-function render(){
-  const list = document.getElementById("list");
-  const posts = POSTS.filter(p => current === "전체" || p.category === current);
-  if (!posts.length){ list.innerHTML = '<div class="empty"><div style="font-size:36px;margin-bottom:8px">📦</div><b style="color:var(--text);font-size:16px">곧 추가돼요</b><br>이 카테고리 추천 상품을 준비하고 있어요 🙌</div>'; return; }
-  const newest = POSTS[0] && POSTS[0].id;
-  list.innerHTML = posts.map(p => `
+// 같은 포스트 안에서 같은 번호가 여러 개면 ①②… 를 붙입니다.
+function buildItems(){
+  ITEMS = [];
+  POSTS.forEach((p, pi) => {
+    const counts = {};
+    p.products.forEach(x => counts[x.num] = (counts[x.num] || 0) + 1);
+    const seen = {};
+    p.products.forEach(x => {
+      seen[x.num] = (seen[x.num] || 0) + 1;
+      const sub = counts[x.num] > 1 ? CIRCLED[seen[x.num] - 1] || `-${seen[x.num]}` : "";
+      x._no = `${x.num}번${sub}`;
+      ITEMS.push({...x, post: p, postIndex: pi});
+    });
+  });
+}
+
+function matches(x){
+  if (!query) return true;
+  const q = norm(query).replace(/번$/, "");
+  if (/^\d+$/.test(q)) return Number(x.num) === Number(q);
+  return norm(x.name).includes(q) || norm(x.post.title).includes(q) || norm(x._no).includes(q);
+}
+
+function emptyBox(icon, title, sub){ return `<div class="empty"><div class="ic">${icon}</div><b>${title}</b>${sub}</div>`; }
+
+function renderPills(){
+  const el = document.getElementById("pills");
+  const items = ITEMS.filter(matches);
+  if (!items.length){ el.innerHTML = emptyBox("🔍", "검색 결과가 없어요", "번호(예: 3) 또는 상품명으로 다시 찾아보세요"); return; }
+  el.innerHTML = items.map(x => `
+    <a class="pill" href="${esc(x.url)}" target="_blank" rel="sponsored noopener" title="${esc(x.name)}">
+      <span class="thumb" aria-hidden="true">${esc(x.emoji || "🛒")}</span>
+      <span class="pill-label"><span class="no num">${esc(x._no)}</span>${esc(x.name)}</span>
+      <span class="go" aria-hidden="true">›</span>
+    </a>`).join("");
+}
+
+function renderPosts(){
+  const el = document.getElementById("list");
+  const posts = POSTS.filter(p => cat === "전체" || p.category === cat)
+    .map(p => ({p, items: ITEMS.filter(x => x.post === p && matches(x))}))
+    .filter(g => g.items.length);
+  if (!posts.length){
+    el.innerHTML = query ? emptyBox("🔍", "검색 결과가 없어요", "다른 카테고리나 검색어를 시도해 보세요")
+                         : emptyBox("📦", "곧 추가돼요", "이 카테고리 추천 상품을 준비하고 있어요 🙌");
+    return;
+  }
+  el.innerHTML = posts.map(({p, items}) => `
     <article class="post">
       <div class="post-meta">
-        <span class="chip ${chipClass(p.category)}">${esc(p.category)}</span>
-        <span class="date">${fmtDate(p.date)}</span>
-        ${p.id === newest ? '<span class="latest">· 최신</span>' : ''}
+        <span class="chip no num">${esc(p.products[0].num)}번</span>
+        <span class="chip">${esc(p.category)}</span>
+        <span class="date num">${fmtDate(p.date)}</span>
       </div>
-      <div class="post-head"><h3 class="post-title">${esc(p.title)}</h3></div>
-      ${p.products.map(x => `
-        <div class="product-wrap">
-          <div class="product">
-            <div class="tile" aria-hidden="true">${esc(x.emoji || "🛒")}</div>
-            <div class="pinfo">
-              <div class="pname">${esc(x.name)}</div>
-              <div class="price"><b>${won(x.price)}</b><span>작성일 기준 가격</span></div>
+      <h3 class="post-title">${esc(p.title)}</h3>
+      ${items.map(x => `
+        <div class="product">
+          <div class="prow">
+            <span class="thumb" aria-hidden="true">${esc(x.emoji || "🛒")}</span>
+            <div>
+              <div class="pname"><span class="no num">${esc(x._no)}</span>${esc(x.name)}</div>
+              <div class="price"><b class="num">${won(x.price)}</b><span>작성일 기준 가격</span></div>
             </div>
           </div>
-          <a class="btn" href="${esc(x.url)}" target="_blank" rel="sponsored noopener">쿠팡에서 보기 →</a>
+          <a class="btn" href="${esc(x.url)}" target="_blank" rel="sponsored noopener">쿠팡에서 보기</a>
         </div>`).join("")}
     </article>`).join("");
 }
 
+function render(){ renderPills(); renderPosts(); }
+
 document.querySelectorAll(".tab").forEach(t => t.addEventListener("click", () => {
-  current = t.dataset.cat;
+  cat = t.dataset.cat;
   document.querySelectorAll(".tab").forEach(b => b.setAttribute("aria-selected", b === t));
-  t.scrollIntoView({behavior:"smooth",inline:"center",block:"nearest"});
-  render();
+  t.scrollIntoView({behavior: "smooth", inline: "center", block: "nearest"});
+  renderPosts();
 }));
 
-function setDiscH(){ document.documentElement.style.setProperty("--disc-h", document.getElementById("disclosure").offsetHeight + "px"); }
-window.addEventListener("resize", setDiscH); setDiscH();
+const qEl = document.getElementById("q"), box = document.getElementById("searchBox");
+qEl.addEventListener("input", () => { query = qEl.value.trim(); box.classList.toggle("has", !!query); render(); });
+document.getElementById("clear").addEventListener("click", () => { qEl.value = ""; query = ""; box.classList.remove("has"); render(); qEl.focus(); });
 
 fetch(DATA_URL, {cache: "no-store"})
   .then(r => r.json())
-  .then(d => { POSTS = (d.posts || []).slice().sort((a,b) => b.date.localeCompare(a.date)); render(); })
-  .catch(() => { document.getElementById("list").innerHTML = '<div class="empty">상품 목록을 불러오지 못했어요. 잠시 후 다시 시도해 주세요.</div>'; });
+  .then(d => {
+    POSTS = (d.posts || []).slice().sort((a, b) => (b.products[0]?.num || "").localeCompare(a.products[0]?.num || "") || b.date.localeCompare(a.date));
+    buildItems(); render();
+  })
+  .catch(() => { document.getElementById("pills").innerHTML = emptyBox("⚠️", "목록을 불러오지 못했어요", "잠시 후 다시 시도해 주세요"); });
 </script>
 </body>
 </html>

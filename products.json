@@ -7,12 +7,14 @@
       "category": "차량용품",
       "products": [
         {
+          "num": "005",
           "name": "레토 가죽 트렁크 정리함, 블랙&블랙",
           "price": 18800,
           "url": "https://link.coupang.com/a/hFu45h6rQq",
           "emoji": "🚗"
         },
         {
+          "num": "005",
           "name": "아이빌 퀄팅 킥매트 자동차 시트커버, 코튼베이지",
           "price": 14840,
           "url": "https://link.coupang.com/a/hFu5ONb97A",
@@ -27,12 +29,14 @@
       "category": "생활용품",
       "products": [
         {
+          "num": "004",
           "name": "코멧 이불 압축팩 8개입+전용펌프 (중형 70×100cm)",
           "price": 9990,
           "url": "https://link.coupang.com/a/hDPPKTRavY",
           "emoji": "🧺"
         },
         {
+          "num": "004",
           "name": "코멧 홈 패브릭 이불 케이스 93L 그레이 4개",
           "price": 13300,
           "url": "https://link.coupang.com/a/hDPQXCCmqW",
@@ -47,12 +51,14 @@
       "category": "육아용품",
       "products": [
         {
+          "num": "003",
           "name": "마이리틀타이거 에너지 트램펄린 (손잡이형, 베이지)",
           "price": 99000,
           "url": "https://link.coupang.com/a/hAwdU2BbNc",
           "emoji": "🦘"
         },
         {
+          "num": "003",
           "name": "로베라 팔각 유아 트램폴린 + 바닥충격 방지쿠션",
           "price": 158000,
           "url": "https://link.coupang.com/a/hAwf0QopCm",
@@ -67,12 +73,14 @@
       "category": "최저가",
       "products": [
         {
+          "num": "002",
           "name": "농심 라면 124g × 20개",
           "price": 21700,
           "url": "https://link.coupang.com/a/hyQ75XlJzo",
           "emoji": "🍜"
         },
         {
+          "num": "002",
           "name": "오뚜기 진라면 매운맛 120g × 20개",
           "price": 13300,
           "url": "https://link.coupang.com/a/hyRaM0pGG4",
@@ -87,12 +95,14 @@
       "category": "소비해부",
       "products": [
         {
+          "num": "001",
           "name": "라이크 콜드브루 더치커피 원액 1L",
           "price": 16900,
           "url": "https://link.coupang.com/a/hydS1eaCRg",
           "emoji": "☕"
         },
         {
+          "num": "001",
           "name": "락앤락 메트로 머그 텀블러 600ml",
           "price": 21270,
           "url": "https://link.coupang.com/a/hydWrbVnlQ",
