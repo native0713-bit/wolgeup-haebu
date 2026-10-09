@@ -1,6 +1,28 @@
 {
   "posts": [
     {
+      "id": "2026-10-09-006",
+      "date": "2026-10-09",
+      "title": "10/9 공원 비눗방울",
+      "category": "육아용품",
+      "products": [
+        {
+          "num": "006",
+          "name": "스틱 왕 비눗방울 대용량 280ml x 3p + 리필액 500ml 세트",
+          "price": 9900,
+          "url": "https://link.coupang.com/a/hHSQx2LH8C",
+          "emoji": "🫧"
+        },
+        {
+          "num": "006",
+          "name": "엔젤 비눗방울 자동 버블건 블루",
+          "price": 8300,
+          "url": "https://link.coupang.com/a/hHSL5wlqRU",
+          "emoji": "🫧"
+        }
+      ]
+    },
+    {
       "id": "2026-10-08-5",
       "date": "2026-10-08",
       "title": "10/8 가을 나들이 차 정리",
