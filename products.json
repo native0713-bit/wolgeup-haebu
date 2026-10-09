@@ -1,6 +1,28 @@
 {
   "posts": [
     {
+      "id": "2026-10-10-007",
+      "date": "2026-10-10",
+      "title": "10/10 주말 집콕 그림놀이",
+      "category": "육아용품",
+      "products": [
+        {
+          "num": "007",
+          "name": "핑크퐁 아기상어 워터매직매트 물로콩콩 물로쓱쓱 무한반복 미술놀이",
+          "price": 30000,
+          "url": "https://link.coupang.com/a/hIPcxk3cuy",
+          "emoji": "🎨"
+        },
+        {
+          "num": "007",
+          "name": "먼치킨 목욕놀이 크레용 완구, 혼합색상, 1세트",
+          "price": 6900,
+          "url": "https://link.coupang.com/a/hIPfpvZEia",
+          "emoji": "🖍️"
+        }
+      ]
+    },
+    {
       "id": "2026-10-09-006",
       "date": "2026-10-09",
       "title": "10/9 공원 비눗방울",
