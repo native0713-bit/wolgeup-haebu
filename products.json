@@ -1,6 +1,28 @@
 {
   "posts": [
     {
+      "id": "2026-10-11-008",
+      "date": "2026-10-11",
+      "title": "10/11 블록놀이 세트",
+      "category": "육아용품",
+      "products": [
+        {
+          "num": "008",
+          "name": "큐블로 자석소마큐브, 혼합색상, 1개",
+          "price": 16800,
+          "url": "https://link.coupang.com/a/hKunZGEkO4",
+          "emoji": "🧲"
+        },
+        {
+          "num": "008",
+          "name": "시벅스 지퍼형 정리함 1.5m",
+          "price": 24200,
+          "url": "https://link.coupang.com/a/hKubDC2BXg",
+          "emoji": "🧺"
+        }
+      ]
+    },
+    {
       "id": "2026-10-10-007",
       "date": "2026-10-10",
       "title": "10/10 주말 집콕 그림놀이",
