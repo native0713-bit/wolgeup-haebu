@@ -1,6 +1,28 @@
 {
   "posts": [
     {
+      "id": "2026-10-12-009",
+      "date": "2026-10-12",
+      "title": "10/12 밥상 정리 세트",
+      "category": "육아용품",
+      "products": [
+        {
+          "num": "009",
+          "name": "모두아이 실리콘 흡착식판, 크림, 단품, 1개",
+          "price": 26600,
+          "url": "https://link.coupang.com/a/hL8Oj7Bdfg",
+          "emoji": "🍽️"
+        },
+        {
+          "num": "009",
+          "name": "프로미스 실리콘 턱받이, 다이노, 1개입, 1개",
+          "price": 11600,
+          "url": "https://link.coupang.com/a/hL8MERw6Am",
+          "emoji": "🍼"
+        }
+      ]
+    },
+    {
       "id": "2026-10-11-008",
       "date": "2026-10-11",
       "title": "10/11 블록놀이 세트",
