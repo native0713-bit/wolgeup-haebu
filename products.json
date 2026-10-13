@@ -1,6 +1,28 @@
 {
   "posts": [
     {
+      "id": "2026-10-13-010",
+      "date": "2026-10-13",
+      "title": "10/13 환절기 아이방 세트",
+      "category": "육아용품",
+      "products": [
+        {
+          "num": "010",
+          "name": "홈플래닛 초음파 가습기 4L, H1001D11",
+          "price": 24990,
+          "url": "https://link.coupang.com/a/hNNY2GJFfM",
+          "emoji": "💧"
+        },
+        {
+          "num": "010",
+          "name": "카스 디지털 온습도계 T023, 화이트, 1개",
+          "price": 9890,
+          "url": "https://link.coupang.com/a/hNN0uUf7IG",
+          "emoji": "🌡️"
+        }
+      ]
+    },
+    {
       "id": "2026-10-12-009",
       "date": "2026-10-12",
       "title": "10/12 밥상 정리 세트",
