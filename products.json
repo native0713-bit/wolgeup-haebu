@@ -1,6 +1,28 @@
 {
   "posts": [
     {
+      "id": "2026-10-14-011",
+      "date": "2026-10-14",
+      "title": "10/14 외출 간식 세트",
+      "category": "육아용품",
+      "products": [
+        {
+          "num": "011",
+          "name": "베이비앤아이 유아용 크림 스낵컵, 코랄핑크 바니, 1개",
+          "price": 9900,
+          "url": "https://link.coupang.com/a/hPsT0hLIsu",
+          "emoji": "🥣"
+        },
+        {
+          "num": "011",
+          "name": "에디슨 프렌즈 흘림방지 입체 빨대컵2, 300ml, 1개, 흰토끼래니",
+          "price": 12470,
+          "url": "https://link.coupang.com/a/hPsZIKMHTg",
+          "emoji": "🥤"
+        }
+      ]
+    },
+    {
       "id": "2026-10-13-010",
       "date": "2026-10-13",
       "title": "10/13 환절기 아이방 세트",
